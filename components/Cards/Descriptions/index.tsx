@@ -16,11 +16,16 @@ const DescriptionCard = ({
   img
 }: DescriptionCardProps) => {
   return (
-    <div className='text-[#14274A] flex flex-row items-center justify-between'>
-      <div className='w-[50%] h-[60%] border-l-2 border-[#14274A]  flex flex-col items-start pl-7 justify-between'>
+    <div className='text-[#14274A] text-center md:text-start flex lg:flex-row flex-col items-center justify-center md:justify-between'>
+      <div className=' w-full md:w-[50%] md:border-l-2 md:border-[#14274A]  flex flex-col items-center md:items-start md:pl-7 gap-5 justify-between'>
         <h2 className='text-2xl font-bold'>{title}</h2>
-        <p>{description}</p>
-        <Link className='bg-[#E0B973] text-center p-1 w-44 font-bold text-white rounded-lg' href={link}>Explore</Link>
+        <p className='pl-4 md:pl-0'>{description}</p>
+        <Link
+          className='bg-[#E0B973] text-center p-1 w-44 font-bold text-white rounded-lg my-4 md:m-4'
+          href={link}
+        >
+          Explore
+        </Link>
       </div>
       <div className='relative w-[400px] h-[256px]'>
         <Image

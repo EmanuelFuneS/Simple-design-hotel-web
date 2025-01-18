@@ -30,8 +30,8 @@ const About = () => {
       ) : (
         <></>
       )}
-      <div className='z-30 relative top-96 w-full h-60 flex flex-col items-center justify-center'>
-        <div className=' m-6 pl-60 w-full '>
+      <div className='z-30 relative top-96 w-full h-screen flex flex-col items-center justify-center'>
+        <div className=' m-6 md:pl-60 w-full '>
           <p className='text-xl'>WELCOME TO</p>
           <h1 className='text-6xl font-bold'>Luxury</h1>
           <h2 className='text-3xl font-bold'>Hotels</h2>

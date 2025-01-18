@@ -27,11 +27,11 @@ ocean. `,
 
 const Description = () => {
   return (
-    <div className='h-screen flex flex-col items-center justify-start p-6 text-[#14274A]'>
-      <h3 className='m-6 text-xl font-semibold'>
+    <div className='min-h-screen flex flex-col items-center justify-start p-6 text-[#14274A]'>
+      <h3 className='m-6 text-xl text-center font-semibold'>
         All our room types are including complementary brakfast.
       </h3>
-      <div className='flex flex-col justify-center items-center gap-6 w-[60%]'>
+      <div className='flex flex-col justify-center items-center gap-6 lg:w-[80%] md:w-[95%] sm:w-full'>
         {descriptions.map((item, idx) => {
           return (
             <DescriptionCard
