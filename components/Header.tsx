@@ -1,46 +1,51 @@
-'use client'
-import Link from 'next/link'
-import React, { useState } from 'react'
-import Logo from './Logo'
-import { FaBars, FaTimes } from 'react-icons/fa'
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Logo from "./Logo";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className='w-full flex items-center justify-between absolute top-0 z-50 '>
+    <div className="max-w-7xl mx-auto h-30 w-full flex items-start md:items-center justify-between absolute top-0 z-50 ">
       <div>
         <Logo />
       </div>
-      <div className='flex lg:hidden'>
-        <button onClick={toggleMenu} className='focus:outline-none p-4'>
-          {isMenuOpen ? <FaTimes size={24} className='animate-fade-in' /> : <FaBars size={24} className='animate-fade-in' />}
-        </button>
-      </div>
+
       <div
-        className={`flex-col items-center justify-between w-full lg:flex lg:flex-row lg:w-[50%] font-bold animate-fade-in ${
-          isMenuOpen ? 'flex' : 'hidden'
+        className={`flex-col items-center justify-between w-full md:flex md:flex-row md:w-[50%] md:pr-4 lg:pr-0 font-bold animate-fade-in ${
+          isMenuOpen ? "flex" : "hidden"
         }`}
       >
-        <Link href='/' className='p-2'>
+        <Link href="/" className="p-2">
           Home
         </Link>
-        <Link href='/facilities' className='pl-2'>
+        <Link href="/facilities" className="pl-2">
           Facilities
         </Link>
-        <Link href='/rooms' className='p-2'>
+        <Link href="/rooms" className="p-2">
           Rooms
         </Link>
-        <Link href='/contact-us' className='pl-2'>
+        <Link href="/contact-us" className="pl-2">
           Contact-us
         </Link>
       </div>
+      <div className="h-full flex items-start md:hidden">
+        <button onClick={toggleMenu} className="focus:outline-none p-4">
+          {isMenuOpen ? (
+            <FaTimes size={24} className="animate-fade-in" />
+          ) : (
+            <FaBars size={24} className="animate-fade-in" />
+          )}
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

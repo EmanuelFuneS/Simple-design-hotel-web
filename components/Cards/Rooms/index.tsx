@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import React from 'react'
+import { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface RoomsCardProps {
-  title: string
-  imgs: any[]
-  type: string
-  linkDetails: string
-  price: string
+  title: string;
+  imgs: StaticImageData[];
+  type: string;
+  linkDetails: string;
+  price: string;
 }
 
 const RoomsCard = ({
@@ -14,18 +14,22 @@ const RoomsCard = ({
   imgs,
   type,
   linkDetails,
-  price
+  price,
 }: RoomsCardProps) => {
+  console.log("imgs", imgs);
   return (
     <div>
       <div> carrousel</div>
-      <div> {type} ROOM</div>
+      <div>
+        {" "}
+        {type} {title}
+      </div>
       <div>
         <Link href={linkDetails}> View Room Details</Link>
         <p>${price} Avg/night</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RoomsCard
+export default RoomsCard;
