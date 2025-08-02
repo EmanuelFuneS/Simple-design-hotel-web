@@ -10,11 +10,11 @@ const images = [BgImage, BgImage2, BgImage3];
 
 const About = () => {
   const [randomIndex, setRandomIndex] = useState<number>();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const index = Math.floor(Math.random() * 3);
     setRandomIndex(index);
-    console.log(index);
   }, []);
 
   return (
@@ -26,7 +26,11 @@ const About = () => {
           alt="Hotel Photo"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
+          sizes="100vw"
+          className="object-cover transition-opacity duration-500"
           priority
+          onLoad={() => setImageLoaded(true)}
         />
       ) : (
         <></>
