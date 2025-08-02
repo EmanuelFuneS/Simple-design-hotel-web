@@ -19,6 +19,9 @@ const About = () => {
 
   return (
     <div id="about" className="h-screen">
+      {!imageLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 animate-pulse" />
+      )}
       <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw]" />
       {randomIndex !== undefined ? (
         <Image
